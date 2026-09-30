@@ -3,15 +3,14 @@ final_score = 0
 rounds_processed = 0
 
 for i in range (num_rounds):
-    score = float(input("enter score"))
+    score = float(input())
     if score > 100:
-        bonus = 0.20
+        bonus = score * 0.20
+        final_score = final_score + score + bonus
     else:
-        bonus = 0
-    num_rounds += 1
- 
-final_score = score + (score * bonus)
-
-               
+        final_score = final_score + score
+        
+rounds_processed = rounds_processed + 1
+              
 print(f"{final_score:.1f}")
 print(rounds_processed)
